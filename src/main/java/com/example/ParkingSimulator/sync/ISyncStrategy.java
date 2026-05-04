@@ -1,4 +1,4 @@
-package com.example.ParkingSimulator;
+package com.example.ParkingSimulator.sync;
 
 public interface ISyncStrategy {
 

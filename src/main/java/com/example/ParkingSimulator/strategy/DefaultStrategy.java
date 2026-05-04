@@ -1,4 +1,4 @@
-package com.example.ParkingSimulator;
+package com.example.ParkingSimulator.strategy;
 import java.util.List;
 
 public class DefaultStrategy implements IStrategy {
@@ -23,3 +23,4 @@ public class DefaultStrategy implements IStrategy {
 		}
 		return -1; // Retourner -1 si aucune place n'est trouvée
 	}
+}

@@ -1,4 +1,4 @@
-package com.example.ParkingSimulator;
+package com.example.ParkingSimulator.sync;
 
 public class MutexSync implements ISyncStrategy {
 

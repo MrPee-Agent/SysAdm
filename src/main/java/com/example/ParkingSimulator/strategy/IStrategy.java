@@ -1,4 +1,4 @@
-package com.example.ParkingSimulator;
+package com.example.ParkingSimulator.strategy;
 import java.util.List;
 
 public interface IStrategy {

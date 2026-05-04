@@ -1,0 +1,9 @@
+/home/pc/parking/SysAdm/src/main/java/com/example/ParkingSimulator/sync/SemaphoreSync.java
+/home/pc/parking/SysAdm/src/main/java/com/example/ParkingSimulator/core/Car.java
+/home/pc/parking/SysAdm/src/main/java/com/example/ParkingSimulator/sync/MutexSync.java
+/home/pc/parking/SysAdm/src/main/java/com/example/ParkingSimulator/strategy/IStrategy.java
+/home/pc/parking/SysAdm/src/main/java/com/example/ParkingSimulator/core/Parking.java
+/home/pc/parking/SysAdm/src/main/java/module-info.java
+/home/pc/parking/SysAdm/src/main/java/com/example/ParkingSimulator/strategy/DefaultStrategy.java
+/home/pc/parking/SysAdm/src/main/java/com/example/ParkingSimulator/core/TestMain.java
+/home/pc/parking/SysAdm/src/main/java/com/example/ParkingSimulator/sync/ISyncStrategy.java

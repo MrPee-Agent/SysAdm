@@ -1,4 +1,7 @@
-package com.example.ParkingSimulator;
+package com.example.ParkingSimulator.core;
+import com.example.ParkingSimulator.strategy.IStrategy;
+import com.example.ParkingSimulator.sync.ISyncStrategy;
+import com.example.ParkingSimulator.sync.MutexSync;
 
 import java.util.ArrayList;
 import java.util.List;
