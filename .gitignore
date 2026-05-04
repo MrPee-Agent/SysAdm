@@ -1,7 +1,7 @@
-# Maven build output
+# Maven
 target/
 
-# IDE settings
+# IDE
 .vscode/
 .idea/
 *.iml
@@ -10,6 +10,6 @@ target/
 logs/
 *.log
 
-# OS files
+# OS
 .DS_Store
 Thumbs.db
