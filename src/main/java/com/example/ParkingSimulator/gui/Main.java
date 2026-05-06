@@ -23,8 +23,8 @@ import java.util.List;
 
 public class Main extends Application {
 
-    private static final int NBR_PLACES = 9;
-    private static final int NBR_CARS   = 15;
+    private int NBR_PLACES = 9;
+    private int NBR_CARS   = 15;
 
     private final List<CustomRectangle> spots = new ArrayList<>();
     private Parking parking;
@@ -35,9 +35,27 @@ public class Main extends Application {
     private Button  btnReset;
     private VBox    logBox;
     private ScrollPane logScroll;
+    private GridPane grid;
 
     @Override
     public void start(Stage stage) {
+        // ── Ask user for config ───────────────────────────────────────
+        TextInputDialog placesDialog = new TextInputDialog("9");
+        placesDialog.setTitle("Configuration");
+        placesDialog.setHeaderText("Parking Simulator");
+        placesDialog.setContentText("Nombre de places :");
+        placesDialog.showAndWait().ifPresent(val -> {
+            try { NBR_PLACES = Integer.parseInt(val); } catch (Exception ignored) {}
+        });
+
+        TextInputDialog carsDialog = new TextInputDialog("15");
+        carsDialog.setTitle("Configuration");
+        carsDialog.setHeaderText("Parking Simulator");
+        carsDialog.setContentText("Nombre de voitures :");
+        carsDialog.showAndWait().ifPresent(val -> {
+            try { NBR_CARS = Integer.parseInt(val); } catch (Exception ignored) {}
+        });
+
         // ── Root layout ──────────────────────────────────────────────
         BorderPane root = new BorderPane();
         root.setStyle("-fx-background-color: #0d1117;");
@@ -51,15 +69,19 @@ public class Main extends Application {
         title.setFont(Font.font("Courier New", FontWeight.BOLD, 26));
         title.setTextFill(Color.web("#58a6ff"));
 
+        Label config = new Label(NBR_PLACES + " places | " + NBR_CARS + " voitures");
+        config.setFont(Font.font("Courier New", 12));
+        config.setTextFill(Color.web("#f0883e"));
+
         modeLabel = new Label("Choisissez un mode de synchronisation");
         modeLabel.setFont(Font.font("Courier New", 13));
         modeLabel.setTextFill(Color.web("#8b949e"));
 
-        header.getChildren().addAll(title, modeLabel);
+        header.getChildren().addAll(title, config, modeLabel);
 
         // ── Parking Grid ─────────────────────────────────────────────
         int cols = (int) Math.ceil(Math.sqrt(NBR_PLACES));
-        GridPane grid = new GridPane();
+        grid = new GridPane();
         grid.setHgap(12);
         grid.setVgap(12);
         grid.setAlignment(Pos.CENTER);
@@ -119,7 +141,7 @@ public class Main extends Application {
         root.setCenter(top);
         root.setBottom(logPanel);
 
-        Scene scene = new Scene(root, 560, 560);
+        Scene scene = new Scene(root, 560, 580);
         stage.setTitle("Parking Simulator");
         stage.setScene(scene);
         stage.setResizable(false);
@@ -133,19 +155,19 @@ public class Main extends Application {
         btn.setPrefWidth(150);
         btn.setPrefHeight(38);
         btn.setStyle(
-            "-fx-background-color: " + bgNormal + ";" +
-            "-fx-background-radius: 6;" +
-            "-fx-cursor: hand;"
+                "-fx-background-color: " + bgNormal + ";" +
+                        "-fx-background-radius: 6;" +
+                        "-fx-cursor: hand;"
         );
         btn.setOnMouseEntered(e -> btn.setStyle(
-            "-fx-background-color: " + bgHover + ";" +
-            "-fx-background-radius: 6;" +
-            "-fx-cursor: hand;"
+                "-fx-background-color: " + bgHover + ";" +
+                        "-fx-background-radius: 6;" +
+                        "-fx-cursor: hand;"
         ));
         btn.setOnMouseExited(e -> btn.setStyle(
-            "-fx-background-color: " + bgNormal + ";" +
-            "-fx-background-radius: 6;" +
-            "-fx-cursor: hand;"
+                "-fx-background-color: " + bgNormal + ";" +
+                        "-fx-background-radius: 6;" +
+                        "-fx-cursor: hand;"
         ));
         return btn;
     }
@@ -175,7 +197,8 @@ public class Main extends Application {
         new Thread(() -> {
             List<Car> cars = new ArrayList<>();
             for (int i = 1; i <= NBR_CARS; i++) {
-                Car car = new Car(i, p) {
+                final int carId = i;
+                Car car = new Car(carId, p) {
                     @Override
                     public void run() {
                         try {
@@ -183,6 +206,7 @@ public class Main extends Application {
                             int place = p.entrer(getCarId());
                             if (place == -1) return;
                             long attente = System.currentTimeMillis() - arrivee;
+
                             Platform.runLater(() -> {
                                 spots.get(place).setOccupied(true, getCarId());
                                 addLog("🚗 Voiture-" + getCarId() + " → place " + place
