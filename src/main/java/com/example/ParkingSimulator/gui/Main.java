@@ -141,10 +141,10 @@ public class Main extends Application {
         root.setCenter(top);
         root.setBottom(logPanel);
 
-        Scene scene = new Scene(root, 560, 580);
+        Scene scene = new Scene(root, 800, 700);
         stage.setTitle("Parking Simulator");
         stage.setScene(scene);
-        stage.setResizable(false);
+        stage.setResizable(true);
         stage.show();
     }
 
