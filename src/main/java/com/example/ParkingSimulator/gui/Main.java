@@ -189,7 +189,7 @@ public class Main extends Application {
                                         + "  (attente " + attente + "ms)", "#58a6ff");
                             });
 
-                            Thread.sleep(2000 + (int)(Math.random() * 3000));
+                            Thread.sleep(5000 + (int)(Math.random() * 5000)); // Ralenti : 5 à 10 secondes
 
                             p.sortir(getCarId(), place);
 
@@ -208,7 +208,7 @@ public class Main extends Application {
 
             for (Car c : cars) {
                 c.start();
-                try { Thread.sleep(300); } catch (InterruptedException ignored) {}
+                try { Thread.sleep(1000); } catch (InterruptedException ignored) {} // Ralenti : 1 seconde entre chaque arrivée
             }
 
             for (Car c : cars) {

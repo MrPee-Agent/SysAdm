@@ -39,7 +39,7 @@ public class Car extends Thread {
 
             // Simulate parking duration (2 to 5 seconds)
             Random random = new Random();
-            Thread.sleep(2000 + random.nextInt(3000));
+            Thread.sleep(5000 + random.nextInt(5000)); // Ralenti : 5 à 10 secondes
 
             // Leave the parking
             parking.sortir(id, place);

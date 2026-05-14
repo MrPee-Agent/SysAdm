@@ -1,0 +1,64 @@
+[2026-05-14 23:29:34] SIMULATION | Mode : MUTEX | Places : 9 | Voitures : 0
+[2026-05-14 23:29:34] ------------------------------------------------------------
+[2026-05-14 23:29:34] Voiture-1 | GAREE     | Place 0 | Attente : 1 ms
+[2026-05-14 23:29:35] Voiture-2 | GAREE     | Place 3 | Attente : 5 ms
+[2026-05-14 23:29:36] Voiture-3 | GAREE     | Place 6 | Attente : 2 ms
+[2026-05-14 23:29:37] Voiture-4 | GAREE     | Place 1 | Attente : 1 ms
+[2026-05-14 23:29:38] Voiture-5 | GAREE     | Place 4 | Attente : 2 ms
+[2026-05-14 23:29:39] Voiture-6 | GAREE     | Place 7 | Attente : 2 ms
+[2026-05-14 23:29:40] Voiture-7 | GAREE     | Place 2 | Attente : 1 ms
+[2026-05-14 23:29:41] Voiture-8 | GAREE     | Place 5 | Attente : 21 ms
+[2026-05-14 23:29:42] Voiture-9 | GAREE     | Place 8 | Attente : 1 ms
+[2026-05-14 23:29:42] Voiture-1 | SORTIE    | Quitte la place 0
+[2026-05-14 23:29:43] Voiture-2 | SORTIE    | Quitte la place 3
+[2026-05-14 23:29:43] Voiture-10 | GAREE     | Place 0 | Attente : 1 ms
+[2026-05-14 23:29:44] Voiture-11 | GAREE     | Place 3 | Attente : 1 ms
+[2026-05-14 23:29:44] Voiture-4 | SORTIE    | Quitte la place 1
+[2026-05-14 23:29:45] Voiture-12 | GAREE     | Place 1 | Attente : 1 ms
+[2026-05-14 23:29:46] Voiture-3 | SORTIE    | Quitte la place 6
+[2026-05-14 23:29:46] Voiture-6 | SORTIE    | Quitte la place 7
+[2026-05-14 23:29:46] Voiture-13 | GAREE     | Place 6 | Attente : 3 ms
+[2026-05-14 23:29:47] Voiture-14 | GAREE     | Place 7 | Attente : 3 ms
+[2026-05-14 23:29:47] Voiture-5 | SORTIE    | Quitte la place 4
+[2026-05-14 23:29:48] Voiture-15 | GAREE     | Place 4 | Attente : 1 ms
+[2026-05-14 23:29:49] Voiture-8 | SORTIE    | Quitte la place 5
+[2026-05-14 23:29:50] Voiture-7 | SORTIE    | Quitte la place 2
+[2026-05-14 23:29:52] Voiture-10 | SORTIE    | Quitte la place 0
+[2026-05-14 23:29:52] Voiture-9 | SORTIE    | Quitte la place 8
+[2026-05-14 23:29:52] Voiture-13 | SORTIE    | Quitte la place 6
+[2026-05-14 23:29:54] Voiture-11 | SORTIE    | Quitte la place 3
+[2026-05-14 23:29:55] Voiture-12 | SORTIE    | Quitte la place 1
+[2026-05-14 23:29:57] Voiture-15 | SORTIE    | Quitte la place 4
+[2026-05-14 23:29:57] Voiture-14 | SORTIE    | Quitte la place 7
+[2026-05-14 23:30:09] SIMULATION | Mode : SEMAPHORE | Places : 9 | Voitures : 0
+[2026-05-14 23:30:09] ------------------------------------------------------------
+[2026-05-14 23:30:09] Voiture-1 | GAREE     | Place 0 | Attente : 1 ms
+[2026-05-14 23:30:10] Voiture-2 | GAREE     | Place 3 | Attente : 2 ms
+[2026-05-14 23:30:11] Voiture-3 | GAREE     | Place 6 | Attente : 3 ms
+[2026-05-14 23:30:12] Voiture-4 | GAREE     | Place 1 | Attente : 1 ms
+[2026-05-14 23:30:13] Voiture-5 | GAREE     | Place 4 | Attente : 0 ms
+[2026-05-14 23:30:14] Voiture-6 | GAREE     | Place 7 | Attente : 0 ms
+[2026-05-14 23:30:15] Voiture-7 | GAREE     | Place 2 | Attente : 1 ms
+[2026-05-14 23:30:16] Voiture-2 | SORTIE    | Quitte la place 3
+[2026-05-14 23:30:16] Voiture-8 | GAREE     | Place 3 | Attente : 0 ms
+[2026-05-14 23:30:17] Voiture-9 | GAREE     | Place 5 | Attente : 3 ms
+[2026-05-14 23:30:18] Voiture-3 | SORTIE    | Quitte la place 6
+[2026-05-14 23:30:18] Voiture-1 | SORTIE    | Quitte la place 0
+[2026-05-14 23:30:18] Voiture-10 | GAREE     | Place 0 | Attente : 0 ms
+[2026-05-14 23:30:18] Voiture-5 | SORTIE    | Quitte la place 4
+[2026-05-14 23:30:19] Voiture-11 | GAREE     | Place 6 | Attente : 1 ms
+[2026-05-14 23:30:20] Voiture-12 | GAREE     | Place 4 | Attente : 2 ms
+[2026-05-14 23:30:21] Voiture-7 | SORTIE    | Quitte la place 2
+[2026-05-14 23:30:21] Voiture-13 | GAREE     | Place 2 | Attente : 0 ms
+[2026-05-14 23:30:22] Voiture-4 | SORTIE    | Quitte la place 1
+[2026-05-14 23:30:22] Voiture-14 | GAREE     | Place 1 | Attente : 1 ms
+[2026-05-14 23:30:23] Voiture-15 | GAREE     | Place 8 | Attente : 1 ms
+[2026-05-14 23:30:23] Voiture-6 | SORTIE    | Quitte la place 7
+[2026-05-14 23:30:24] Voiture-8 | SORTIE    | Quitte la place 3
+[2026-05-14 23:30:24] Voiture-9 | SORTIE    | Quitte la place 5
+[2026-05-14 23:30:25] Voiture-10 | SORTIE    | Quitte la place 0
+[2026-05-14 23:30:26] Voiture-11 | SORTIE    | Quitte la place 6
+[2026-05-14 23:30:29] Voiture-15 | SORTIE    | Quitte la place 8
+[2026-05-14 23:30:29] Voiture-12 | SORTIE    | Quitte la place 4
+[2026-05-14 23:30:30] Voiture-13 | SORTIE    | Quitte la place 2
+[2026-05-14 23:30:31] Voiture-14 | SORTIE    | Quitte la place 1
