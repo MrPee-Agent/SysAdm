@@ -5,6 +5,7 @@ import com.example.ParkingSimulator.core.Parking;
 import com.example.ParkingSimulator.strategy.DefaultStrategy;
 import com.example.ParkingSimulator.sync.MutexSync;
 import com.example.ParkingSimulator.sync.SemaphoreSync;
+import com.example.ParkingSimulator.utils.LoggerUtil;  // ← AJOUT
 
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -180,6 +181,11 @@ public class Main extends Application {
         resetSpots();
         clearLog();
 
+        // ── LOGGER : réinitialiser pour la nouvelle simulation ────────
+        LoggerUtil logger = LoggerUtil.getInstance();
+        logger.reset();
+        logger.logSimulationStart(NBR_PLACES, NBR_CARS, mode);
+
         Platform.runLater(() -> {
             modeLabel.setText("Mode actif : " + mode);
             statusLabel.setText("Simulation en cours...");
@@ -202,10 +208,23 @@ public class Main extends Application {
                     @Override
                     public void run() {
                         try {
+                            // ── LOGGER : arrivée de la voiture ───────
+                            logger.logArrival(getCarId());
+
                             long arrivee = System.currentTimeMillis();
+
+                            // ── LOGGER : la voiture va potentiellement attendre ──
+                            // On le signale avant d'appeler entrer() car entrer()
+                            // peut bloquer si le parking est plein.
+                            logger.logWaiting(getCarId(), arrivee);
+
                             int place = p.entrer(getCarId());
                             if (place == -1) return;
+
                             long attente = System.currentTimeMillis() - arrivee;
+
+                            // ── LOGGER : stationnement réussi ────────
+                            logger.logParked(getCarId(), place, System.currentTimeMillis());
 
                             Platform.runLater(() -> {
                                 spots.get(place).setOccupied(true, getCarId());
@@ -213,9 +232,15 @@ public class Main extends Application {
                                         + "  (attente " + attente + "ms)", "#58a6ff");
                             });
 
-                            Thread.sleep(2000 + (int)(Math.random() * 3000));
+                            long debutStationnement = System.currentTimeMillis();
+                            long dureeStationnement = 2000 + (int)(Math.random() * 3000);
+                            Thread.sleep(dureeStationnement);
 
                             p.sortir(getCarId(), place);
+
+                            // ── LOGGER : départ de la voiture ────────
+                            long dureeReelle = System.currentTimeMillis() - debutStationnement;
+                            logger.logDeparture(getCarId(), place, dureeReelle);
 
                             Platform.runLater(() -> {
                                 spots.get(place).setOccupied(false, -1);
@@ -239,10 +264,22 @@ public class Main extends Application {
                 try { c.join(); } catch (InterruptedException ignored) {}
             }
 
+            // ── LOGGER : fin de simulation + rapport statistique ──────
+            logger.logSimulationEnd();
+            logger.analyze();   // ← écrit le rapport dans parking.log
+
             Platform.runLater(() -> {
                 statusLabel.setText("✅ Simulation terminée !");
                 btnReset.setDisable(false);
                 addLog("── Simulation terminée ──", "#f0883e");
+
+                // Afficher les stats dans le journal JavaFX
+                var stats = logger.getStats();
+                addLog("📊 Voitures garées   : " + stats.get("parkedCars") + "/" + stats.get("totalCars"), "#f0883e");
+                addLog("⏱  Attente moyenne   : " + stats.get("avgWaitMs") + " ms", "#f0883e");
+                addLog("⏱  Attente max       : " + stats.get("maxWaitMs") + " ms", "#f0883e");
+                addLog("📈 Taux utilisation  : " + stats.get("utilizationRate") + "%", "#f0883e");
+                addLog("💾 Log sauvegardé → logs/parking.log", "#8b949e");
             });
 
         }).start();

@@ -1,0 +1,182 @@
+======================================================================
+  PARKING SIMULATOR — Journal d'exécution
+  Démarré le : 2026-05-14 19:53:43.510
+======================================================================
+HORODATAGE                 ÉVÉNEMENT            ID     MESSAGE
+----------------------------------------------------------------------
+2026-05-14 19:53:43.510    SIMULATION_START     -      Démarrage — 20 places | 40 voitures | Stratégie : SEMAPHORE
+2026-05-14 19:53:43.512    CAR_ARRIVAL          1      Voiture 1 arrive au parking.
+2026-05-14 19:53:43.512    CAR_WAITING          1      Voiture 1 attend — parking complet.
+2026-05-14 19:53:43.512    CAR_PARKED           1      Voiture 1 garée — place #0  (attente : 0 ms)
+2026-05-14 19:53:43.812    CAR_ARRIVAL          2      Voiture 2 arrive au parking.
+2026-05-14 19:53:43.812    CAR_WAITING          2      Voiture 2 attend — parking complet.
+2026-05-14 19:53:43.813    CAR_PARKED           2      Voiture 2 garée — place #5  (attente : 1 ms)
+2026-05-14 19:53:44.113    CAR_ARRIVAL          3      Voiture 3 arrive au parking.
+2026-05-14 19:53:44.113    CAR_WAITING          3      Voiture 3 attend — parking complet.
+2026-05-14 19:53:44.113    CAR_PARKED           3      Voiture 3 garée — place #10  (attente : 0 ms)
+2026-05-14 19:53:44.413    CAR_ARRIVAL          4      Voiture 4 arrive au parking.
+2026-05-14 19:53:44.413    CAR_WAITING          4      Voiture 4 attend — parking complet.
+2026-05-14 19:53:44.413    CAR_PARKED           4      Voiture 4 garée — place #15  (attente : 0 ms)
+2026-05-14 19:53:44.714    CAR_ARRIVAL          5      Voiture 5 arrive au parking.
+2026-05-14 19:53:44.714    CAR_WAITING          5      Voiture 5 attend — parking complet.
+2026-05-14 19:53:44.714    CAR_PARKED           5      Voiture 5 garée — place #1  (attente : 0 ms)
+2026-05-14 19:53:45.015    CAR_ARRIVAL          6      Voiture 6 arrive au parking.
+2026-05-14 19:53:45.015    CAR_WAITING          6      Voiture 6 attend — parking complet.
+2026-05-14 19:53:45.015    CAR_PARKED           6      Voiture 6 garée — place #6  (attente : 0 ms)
+2026-05-14 19:53:45.316    CAR_ARRIVAL          7      Voiture 7 arrive au parking.
+2026-05-14 19:53:45.317    CAR_WAITING          7      Voiture 7 attend — parking complet.
+2026-05-14 19:53:45.317    CAR_PARKED           7      Voiture 7 garée — place #11  (attente : 1 ms)
+2026-05-14 19:53:45.617    CAR_ARRIVAL          8      Voiture 8 arrive au parking.
+2026-05-14 19:53:45.617    CAR_WAITING          8      Voiture 8 attend — parking complet.
+2026-05-14 19:53:45.617    CAR_PARKED           8      Voiture 8 garée — place #16  (attente : 0 ms)
+2026-05-14 19:53:45.659    CAR_DEPARTED         1      Voiture 1 quitte la place #0  (durée stationnement : 2147 ms)
+2026-05-14 19:53:45.918    CAR_ARRIVAL          9      Voiture 9 arrive au parking.
+2026-05-14 19:53:45.919    CAR_WAITING          9      Voiture 9 attend — parking complet.
+2026-05-14 19:53:45.919    CAR_PARKED           9      Voiture 9 garée — place #0  (attente : 0 ms)
+2026-05-14 19:53:46.220    CAR_ARRIVAL          10     Voiture 10 arrive au parking.
+2026-05-14 19:53:46.220    CAR_WAITING          10     Voiture 10 attend — parking complet.
+2026-05-14 19:53:46.220    CAR_PARKED           10     Voiture 10 garée — place #2  (attente : 0 ms)
+2026-05-14 19:53:46.521    CAR_ARRIVAL          11     Voiture 11 arrive au parking.
+2026-05-14 19:53:46.521    CAR_WAITING          11     Voiture 11 attend — parking complet.
+2026-05-14 19:53:46.521    CAR_PARKED           11     Voiture 11 garée — place #7  (attente : 0 ms)
+2026-05-14 19:53:46.631    CAR_DEPARTED         2      Voiture 2 quitte la place #5  (durée stationnement : 2818 ms)
+2026-05-14 19:53:46.822    CAR_ARRIVAL          12     Voiture 12 arrive au parking.
+2026-05-14 19:53:46.822    CAR_WAITING          12     Voiture 12 attend — parking complet.
+2026-05-14 19:53:46.822    CAR_PARKED           12     Voiture 12 garée — place #5  (attente : 0 ms)
+2026-05-14 19:53:47.089    CAR_DEPARTED         4      Voiture 4 quitte la place #15  (durée stationnement : 2676 ms)
+2026-05-14 19:53:47.122    CAR_ARRIVAL          13     Voiture 13 arrive au parking.
+2026-05-14 19:53:47.122    CAR_WAITING          13     Voiture 13 attend — parking complet.
+2026-05-14 19:53:47.123    CAR_PARKED           13     Voiture 13 garée — place #15  (attente : 1 ms)
+2026-05-14 19:53:47.236    CAR_DEPARTED         5      Voiture 5 quitte la place #1  (durée stationnement : 2522 ms)
+2026-05-14 19:53:47.391    CAR_DEPARTED         3      Voiture 3 quitte la place #10  (durée stationnement : 3278 ms)
+2026-05-14 19:53:47.423    CAR_ARRIVAL          14     Voiture 14 arrive au parking.
+2026-05-14 19:53:47.424    CAR_WAITING          14     Voiture 14 attend — parking complet.
+2026-05-14 19:53:47.424    CAR_PARKED           14     Voiture 14 garée — place #10  (attente : 0 ms)
+2026-05-14 19:53:47.724    CAR_ARRIVAL          15     Voiture 15 arrive au parking.
+2026-05-14 19:53:47.724    CAR_WAITING          15     Voiture 15 attend — parking complet.
+2026-05-14 19:53:47.725    CAR_PARKED           15     Voiture 15 garée — place #1  (attente : 0 ms)
+2026-05-14 19:53:48.025    CAR_ARRIVAL          16     Voiture 16 arrive au parking.
+2026-05-14 19:53:48.025    CAR_WAITING          16     Voiture 16 attend — parking complet.
+2026-05-14 19:53:48.025    CAR_PARKED           16     Voiture 16 garée — place #12  (attente : 0 ms)
+2026-05-14 19:53:48.228    CAR_DEPARTED         10     Voiture 10 quitte la place #2  (durée stationnement : 2008 ms)
+2026-05-14 19:53:48.325    CAR_ARRIVAL          17     Voiture 17 arrive au parking.
+2026-05-14 19:53:48.325    CAR_WAITING          17     Voiture 17 attend — parking complet.
+2026-05-14 19:53:48.325    CAR_PARKED           17     Voiture 17 garée — place #2  (attente : 0 ms)
+2026-05-14 19:53:48.625    CAR_ARRIVAL          18     Voiture 18 arrive au parking.
+2026-05-14 19:53:48.625    CAR_WAITING          18     Voiture 18 attend — parking complet.
+2026-05-14 19:53:48.626    CAR_PARKED           18     Voiture 18 garée — place #17  (attente : 1 ms)
+2026-05-14 19:53:48.926    CAR_ARRIVAL          19     Voiture 19 arrive au parking.
+2026-05-14 19:53:48.927    CAR_WAITING          19     Voiture 19 attend — parking complet.
+2026-05-14 19:53:48.927    CAR_PARKED           19     Voiture 19 garée — place #3  (attente : 1 ms)
+2026-05-14 19:53:48.975    CAR_DEPARTED         8      Voiture 8 quitte la place #16  (durée stationnement : 3358 ms)
+2026-05-14 19:53:49.045    CAR_DEPARTED         7      Voiture 7 quitte la place #11  (durée stationnement : 3728 ms)
+2026-05-14 19:53:49.154    CAR_DEPARTED         6      Voiture 6 quitte la place #6  (durée stationnement : 4139 ms)
+2026-05-14 19:53:49.228    CAR_ARRIVAL          20     Voiture 20 arrive au parking.
+2026-05-14 19:53:49.228    CAR_WAITING          20     Voiture 20 attend — parking complet.
+2026-05-14 19:53:49.228    CAR_PARKED           20     Voiture 20 garée — place #6  (attente : 0 ms)
+2026-05-14 19:53:49.365    CAR_DEPARTED         11     Voiture 11 quitte la place #7  (durée stationnement : 2844 ms)
+2026-05-14 19:53:49.528    CAR_ARRIVAL          21     Voiture 21 arrive au parking.
+2026-05-14 19:53:49.528    CAR_WAITING          21     Voiture 21 attend — parking complet.
+2026-05-14 19:53:49.528    CAR_PARKED           21     Voiture 21 garée — place #11  (attente : 0 ms)
+2026-05-14 19:53:49.829    CAR_ARRIVAL          22     Voiture 22 arrive au parking.
+2026-05-14 19:53:49.829    CAR_WAITING          22     Voiture 22 attend — parking complet.
+2026-05-14 19:53:49.829    CAR_PARKED           22     Voiture 22 garée — place #16  (attente : 0 ms)
+2026-05-14 19:53:50.130    CAR_ARRIVAL          23     Voiture 23 arrive au parking.
+2026-05-14 19:53:50.130    CAR_WAITING          23     Voiture 23 attend — parking complet.
+2026-05-14 19:53:50.130    CAR_PARKED           23     Voiture 23 garée — place #7  (attente : 0 ms)
+2026-05-14 19:53:50.283    CAR_DEPARTED         14     Voiture 14 quitte la place #10  (durée stationnement : 2859 ms)
+2026-05-14 19:53:50.430    CAR_ARRIVAL          24     Voiture 24 arrive au parking.
+2026-05-14 19:53:50.431    CAR_WAITING          24     Voiture 24 attend — parking complet.
+2026-05-14 19:53:50.431    CAR_PARKED           24     Voiture 24 garée — place #10  (attente : 0 ms)
+2026-05-14 19:53:50.539    CAR_DEPARTED         9      Voiture 9 quitte la place #0  (durée stationnement : 4620 ms)
+2026-05-14 19:53:50.706    CAR_DEPARTED         16     Voiture 16 quitte la place #12  (durée stationnement : 2681 ms)
+2026-05-14 19:53:50.731    CAR_ARRIVAL          25     Voiture 25 arrive au parking.
+2026-05-14 19:53:50.731    CAR_WAITING          25     Voiture 25 attend — parking complet.
+2026-05-14 19:53:50.731    CAR_PARKED           25     Voiture 25 garée — place #0  (attente : 0 ms)
+2026-05-14 19:53:50.888    CAR_DEPARTED         12     Voiture 12 quitte la place #5  (durée stationnement : 4066 ms)
+2026-05-14 19:53:51.034    CAR_ARRIVAL          26     Voiture 26 arrive au parking.
+2026-05-14 19:53:51.034    CAR_WAITING          26     Voiture 26 attend — parking complet.
+2026-05-14 19:53:51.034    CAR_PARKED           26     Voiture 26 garée — place #5  (attente : 0 ms)
+2026-05-14 19:53:51.178    CAR_DEPARTED         15     Voiture 15 quitte la place #1  (durée stationnement : 3453 ms)
+2026-05-14 19:53:51.335    CAR_ARRIVAL          27     Voiture 27 arrive au parking.
+2026-05-14 19:53:51.335    CAR_WAITING          27     Voiture 27 attend — parking complet.
+2026-05-14 19:53:51.335    CAR_PARKED           27     Voiture 27 garée — place #1  (attente : 0 ms)
+2026-05-14 19:53:51.624    CAR_DEPARTED         13     Voiture 13 quitte la place #15  (durée stationnement : 4501 ms)
+2026-05-14 19:53:51.636    CAR_ARRIVAL          28     Voiture 28 arrive au parking.
+2026-05-14 19:53:51.637    CAR_WAITING          28     Voiture 28 attend — parking complet.
+2026-05-14 19:53:51.637    CAR_PARKED           28     Voiture 28 garée — place #15  (attente : 0 ms)
+2026-05-14 19:53:51.937    CAR_ARRIVAL          29     Voiture 29 arrive au parking.
+2026-05-14 19:53:51.937    CAR_WAITING          29     Voiture 29 attend — parking complet.
+2026-05-14 19:53:51.937    CAR_PARKED           29     Voiture 29 garée — place #12  (attente : 0 ms)
+2026-05-14 19:53:52.207    CAR_DEPARTED         18     Voiture 18 quitte la place #17  (durée stationnement : 3581 ms)
+2026-05-14 19:53:52.238    CAR_ARRIVAL          30     Voiture 30 arrive au parking.
+2026-05-14 19:53:52.239    CAR_WAITING          30     Voiture 30 attend — parking complet.
+2026-05-14 19:53:52.239    CAR_PARKED           30     Voiture 30 garée — place #17  (attente : 0 ms)
+2026-05-14 19:53:52.539    CAR_ARRIVAL          31     Voiture 31 arrive au parking.
+2026-05-14 19:53:52.539    CAR_WAITING          31     Voiture 31 attend — parking complet.
+2026-05-14 19:53:52.539    CAR_PARKED           31     Voiture 31 garée — place #8  (attente : 0 ms)
+2026-05-14 19:53:52.840    CAR_ARRIVAL          32     Voiture 32 arrive au parking.
+2026-05-14 19:53:52.840    CAR_WAITING          32     Voiture 32 attend — parking complet.
+2026-05-14 19:53:52.840    CAR_PARKED           32     Voiture 32 garée — place #13  (attente : 0 ms)
+2026-05-14 19:53:52.967    CAR_DEPARTED         20     Voiture 20 quitte la place #6  (durée stationnement : 3739 ms)
+2026-05-14 19:53:53.141    CAR_ARRIVAL          33     Voiture 33 arrive au parking.
+2026-05-14 19:53:53.141    CAR_WAITING          33     Voiture 33 attend — parking complet.
+2026-05-14 19:53:53.141    CAR_PARKED           33     Voiture 33 garée — place #6  (attente : 0 ms)
+2026-05-14 19:53:53.276    CAR_DEPARTED         17     Voiture 17 quitte la place #2  (durée stationnement : 4950 ms)
+2026-05-14 19:53:53.362    CAR_DEPARTED         19     Voiture 19 quitte la place #3  (durée stationnement : 4435 ms)
+2026-05-14 19:53:53.404    CAR_DEPARTED         24     Voiture 24 quitte la place #10  (durée stationnement : 2973 ms)
+2026-05-14 19:53:53.441    CAR_ARRIVAL          34     Voiture 34 arrive au parking.
+2026-05-14 19:53:53.441    CAR_WAITING          34     Voiture 34 attend — parking complet.
+2026-05-14 19:53:53.441    CAR_PARKED           34     Voiture 34 garée — place #10  (attente : 0 ms)
+2026-05-14 19:53:53.521    CAR_DEPARTED         26     Voiture 26 quitte la place #5  (durée stationnement : 2487 ms)
+2026-05-14 19:53:53.704    CAR_DEPARTED         23     Voiture 23 quitte la place #7  (durée stationnement : 3574 ms)
+2026-05-14 19:53:53.741    CAR_ARRIVAL          35     Voiture 35 arrive au parking.
+2026-05-14 19:53:53.742    CAR_WAITING          35     Voiture 35 attend — parking complet.
+2026-05-14 19:53:53.742    CAR_PARKED           35     Voiture 35 garée — place #5  (attente : 0 ms)
+2026-05-14 19:53:53.781    CAR_DEPARTED         25     Voiture 25 quitte la place #0  (durée stationnement : 3050 ms)
+2026-05-14 19:53:54.042    CAR_ARRIVAL          36     Voiture 36 arrive au parking.
+2026-05-14 19:53:54.042    CAR_WAITING          36     Voiture 36 attend — parking complet.
+2026-05-14 19:53:54.042    CAR_PARKED           36     Voiture 36 garée — place #0  (attente : 0 ms)
+2026-05-14 19:53:54.202    CAR_DEPARTED         21     Voiture 21 quitte la place #11  (durée stationnement : 4674 ms)
+2026-05-14 19:53:54.225    CAR_DEPARTED         28     Voiture 28 quitte la place #15  (durée stationnement : 2588 ms)
+2026-05-14 19:53:54.342    CAR_ARRIVAL          37     Voiture 37 arrive au parking.
+2026-05-14 19:53:54.342    CAR_WAITING          37     Voiture 37 attend — parking complet.
+2026-05-14 19:53:54.342    CAR_PARKED           37     Voiture 37 garée — place #15  (attente : 0 ms)
+2026-05-14 19:53:54.419    CAR_DEPARTED         27     Voiture 27 quitte la place #1  (durée stationnement : 3084 ms)
+2026-05-14 19:53:54.457    CAR_DEPARTED         22     Voiture 22 quitte la place #16  (durée stationnement : 4628 ms)
+2026-05-14 19:53:54.643    CAR_ARRIVAL          38     Voiture 38 arrive au parking.
+2026-05-14 19:53:54.643    CAR_WAITING          38     Voiture 38 attend — parking complet.
+2026-05-14 19:53:54.644    CAR_PARKED           38     Voiture 38 garée — place #1  (attente : 1 ms)
+2026-05-14 19:53:54.943    CAR_ARRIVAL          39     Voiture 39 arrive au parking.
+2026-05-14 19:53:54.943    CAR_WAITING          39     Voiture 39 attend — parking complet.
+2026-05-14 19:53:54.943    CAR_PARKED           39     Voiture 39 garée — place #11  (attente : 0 ms)
+2026-05-14 19:53:55.080    CAR_DEPARTED         32     Voiture 32 quitte la place #13  (durée stationnement : 2240 ms)
+2026-05-14 19:53:55.219    CAR_DEPARTED         33     Voiture 33 quitte la place #6  (durée stationnement : 2078 ms)
+2026-05-14 19:53:55.244    CAR_ARRIVAL          40     Voiture 40 arrive au parking.
+2026-05-14 19:53:55.244    CAR_WAITING          40     Voiture 40 attend — parking complet.
+2026-05-14 19:53:55.244    CAR_PARKED           40     Voiture 40 garée — place #6  (attente : 0 ms)
+2026-05-14 19:53:56.170    CAR_DEPARTED         34     Voiture 34 quitte la place #10  (durée stationnement : 2729 ms)
+2026-05-14 19:53:56.572    CAR_DEPARTED         29     Voiture 29 quitte la place #12  (durée stationnement : 4635 ms)
+2026-05-14 19:53:56.820    CAR_DEPARTED         30     Voiture 30 quitte la place #17  (durée stationnement : 4581 ms)
+2026-05-14 19:53:57.063    CAR_DEPARTED         39     Voiture 39 quitte la place #11  (durée stationnement : 2120 ms)
+2026-05-14 19:53:57.112    CAR_DEPARTED         31     Voiture 31 quitte la place #8  (durée stationnement : 4573 ms)
+2026-05-14 19:53:57.670    CAR_DEPARTED         38     Voiture 38 quitte la place #1  (durée stationnement : 3026 ms)
+2026-05-14 19:53:57.747    CAR_DEPARTED         36     Voiture 36 quitte la place #0  (durée stationnement : 3705 ms)
+2026-05-14 19:53:58.368    CAR_DEPARTED         35     Voiture 35 quitte la place #5  (durée stationnement : 4626 ms)
+2026-05-14 19:53:58.677    CAR_DEPARTED         37     Voiture 37 quitte la place #15  (durée stationnement : 4335 ms)
+2026-05-14 19:53:59.590    CAR_DEPARTED         40     Voiture 40 quitte la place #6  (durée stationnement : 4346 ms)
+2026-05-14 19:53:59.590    SIMULATION_END       -      Simulation terminée.
+======================================================================
+  RAPPORT D'ANALYSE STATISTIQUE
+======================================================================
+  Voitures simulées         : 40
+  Voitures garées           : 40 (100,0%)
+  Voitures ayant attendu    : 6
+----------------------------------------------------------------------
+  Attente moyenne           : 1,0 ms
+  Attente minimale          : 1 ms
+  Attente maximale          : 1 ms
+----------------------------------------------------------------------
+  Durée stationnement moy.  : 3461,4 ms
+  Taux d'utilisation        : 100,00%
+======================================================================
