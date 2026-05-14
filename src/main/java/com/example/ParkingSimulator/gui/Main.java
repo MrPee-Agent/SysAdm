@@ -100,7 +100,16 @@ public class Main extends Application {
         statusLabel.setTextFill(Color.web("#f0f6fc"));
         statusLabel.setPadding(new Insets(8, 0, 0, 0));
 
-        VBox centerBox = new VBox(10, grid, statusLabel);
+        StackPane gridContainer = new StackPane(grid);
+        gridContainer.setAlignment(Pos.CENTER);
+        gridContainer.setStyle("-fx-background-color: #0d1117;");
+
+        ScrollPane gridScroll = new ScrollPane(gridContainer);
+        gridScroll.setFitToWidth(true);
+        gridScroll.setStyle("-fx-background: #0d1117; -fx-background-color: #0d1117; -fx-border-color: #0d1117;");
+        VBox.setVgrow(gridScroll, Priority.ALWAYS);
+
+        VBox centerBox = new VBox(10, gridScroll, statusLabel);
         centerBox.setAlignment(Pos.CENTER);
 
         // ── Buttons ───────────────────────────────────────────────────
@@ -139,6 +148,7 @@ public class Main extends Application {
 
         // ── Assemble ──────────────────────────────────────────────────
         VBox top = new VBox(0, header, centerBox, btnBox);
+        VBox.setVgrow(centerBox, Priority.ALWAYS);
         root.setCenter(top);
         root.setBottom(logPanel);
 
@@ -233,7 +243,7 @@ public class Main extends Application {
                             });
 
                             long debutStationnement = System.currentTimeMillis();
-                            long dureeStationnement = 2000 + (int)(Math.random() * 3000);
+                            long dureeStationnement = 5000 + (int)(Math.random() * 5000); // Ralenti : 5 à 10 secondes
                             Thread.sleep(dureeStationnement);
 
                             p.sortir(getCarId(), place);
@@ -257,7 +267,7 @@ public class Main extends Application {
 
             for (Car c : cars) {
                 c.start();
-                try { Thread.sleep(300); } catch (InterruptedException ignored) {}
+                try { Thread.sleep(1000); } catch (InterruptedException ignored) {} // Ralenti : 1 seconde entre chaque arrivée
             }
 
             for (Car c : cars) {
