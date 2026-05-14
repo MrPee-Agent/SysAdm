@@ -17,6 +17,9 @@ public class MutexSync implements ISyncStrategy {
                 System.out.println("[MUTEX] Voiture-" + voitureId + " attend une place...");
                 verrou.wait();
             }
+            // Une fois réveillé, on consomme la place disponible
+            placeDispo = false;
+            System.out.println("[MUTEX] Voiture-" + voitureId + " a obtenu l'accès");
         }
     }
 
@@ -29,7 +32,12 @@ public class MutexSync implements ISyncStrategy {
     }
 
     public void setPlaceDispo(boolean dispo) {
-        this.placeDispo = dispo;
+        synchronized (verrou) {
+            this.placeDispo = dispo;
+            if (dispo) {
+                verrou.notifyAll();
+            }
+        }
     }
 
     @Override

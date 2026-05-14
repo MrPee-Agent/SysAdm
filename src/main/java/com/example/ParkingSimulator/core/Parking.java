@@ -1,7 +1,9 @@
 package com.example.ParkingSimulator.core;
+
 import com.example.ParkingSimulator.strategy.IStrategy;
 import com.example.ParkingSimulator.sync.ISyncStrategy;
 import com.example.ParkingSimulator.sync.MutexSync;
+import com.example.ParkingSimulator.utils.LoggerUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +31,8 @@ public class Parking {
 
         System.out.println("[Parking] Créé → "
                 + nbrPlaces + " places | Mode : " + syncStrategy.getNom());
+
+        LoggerUtil.logMode(syncStrategy.getNom(), nbrPlaces, 0);
     }
 
     public int entrer(int voitureId) throws InterruptedException {
@@ -48,12 +52,20 @@ public class Parking {
 
         synchronized (this) {
             int place = strategy.trouverPlace(tempPlace, placeOccupe, nbrPlaces);
+
+            if (place == -1) {
+                syncStrategy.libérer(voitureId);
+                return entrer(voitureId);
+            }
+
             placeOccupe.set(place, true);
             tempPlace.set(place, System.currentTimeMillis());
 
             System.out.println("[Parking] Voiture-" + voitureId
                     + " → place " + place
                     + " (attente : " + attente + "ms)");
+
+            LoggerUtil.logGare(voitureId, place, attente);
             return place;
         }
     }
@@ -71,6 +83,7 @@ public class Parking {
         System.out.println("[Parking] Voiture-" + voitureId
                 + " quitte la place " + place);
 
+        LoggerUtil.logSortie(voitureId, place);
         syncStrategy.libérer(voitureId);
     }
 
